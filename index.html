@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permu-kub - Casse-tête de Permutation Spatiale</title>
+    <link rel="stylesheet" href="binoku_style.css">
+</head>
+<body>
+
+    <main class="binokub-container">
+        <!-- Écran de Configuration / Menu Principal -->
+        <div id="menu-screen" class="menu-screen">
+            <header class="binokub-header" style="justify-content: center; border: none; margin-bottom: 0;">
+                <h1 class="binokub-title">Permu-<span>kub</span></h1>
+            </header>
+            
+            <div class="menu-group">
+                <label>Format de la grille</label>
+                <div class="options-row">
+                    <button id="size-6" class="opt-btn active" data-size="6">6x6 (4 Blocs)</button>
+                    <button id="size-9" class="opt-btn" data-size="9">9x9 (9 Blocs)</button>
+                </div>
+            </div>
+
+            <div class="menu-group">
+                <label>Protocole de jeu</label>
+                <div class="options-row">
+                    <button id="mode-1" class="opt-btn active" data-mode="1">Libre</button>
+                    <button id="mode-2" class="opt-btn" data-mode="2">Tactique (Fixes)</button>
+                </div>
+            </div>
+
+            <button id="btn-start-game" class="menu-btn">Lancer la Partie</button>
+        </div>
+
+        <!-- Interface de Jeu -->
+        <div id="game-screen" style="display: none;">
+            <header class="binokub-header">
+                <h1 class="binokub-title">Permu-<span>kub</span></h1>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button id="binoku-menu-btn" class="selector-btn">Menu</button>
+                    <button id="binoku-reset-btn" class="selector-btn">Recommencer</button>
+                </div>
+            </header>
+
+            <div class="binokub-status-panel">
+                <div class="status-item">
+                    <span class="status-label">État du Système</span>
+                    <span id="binoku-status" class="status-value">Initialisation...</span>
+                </div>
+            </div>
+
+            <div class="binokub-grid-wrapper">
+                <div id="binoku-grid" class="binokub-grid">
+                    <!-- Rempli dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chargement séquentiel des scripts -->
+    <script src="binoku_generator.js"></script>
+    <script src="binoku_shuffler.js"></script>
+    <script src="binoku_gameplay.js"></script>
+</body>
+</html>

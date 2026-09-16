@@ -1,0 +1,255 @@
+/* ==========================================
+   PERMU-KUB - STYLESHEET v2.1.0
+   ========================================== */
+
+:root {
+    --bg-primary: #0a0c10;
+    --surface-color: #121620;
+    --surface-hover: #1a2030;
+    --border-color: #222b3c;
+    --border-block: #00f3ff;
+    --text-main: #f0f4f8;
+    --text-muted: #8899ac;
+    --text-accent: #00f3ff;
+    --danger-color: #ff3366;
+    --success-color: #00ff66;
+    --transition-fast: 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.binokub-container {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 540px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* En-tête */
+.binokub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.binokub-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+.binokub-title span {
+    color: var(--text-accent);
+}
+
+/* Boutons et Contrôles */
+.selector-btn, .menu-btn {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: var(--transition-fast);
+}
+
+.selector-btn:hover, .menu-btn:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 0.85rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Menu de configuration */
+.menu-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    text-align: left;
+}
+
+.menu-group {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.85rem;
+    border-radius: 6px;
+}
+
+.menu-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.options-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.opt-btn {
+    flex: 1;
+    background-color: var(--surface-color);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.opt-btn.active {
+    background-color: rgba(0, 243, 255, 0.15);
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+}
+
+/* Panneau de statut */
+.binokub-status-panel {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.status-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.status-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-accent);
+}
+
+/* Grilles dynamiques */
+.binokub-grid-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.binokub-grid {
+    display: grid;
+    gap: 3px;
+    background-color: var(--border-color);
+    padding: 3px;
+    border-radius: 6px;
+}
+
+.grid-6x6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-9x9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+/* Tuiles de jeu */
+.binoku-tile {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: var(--transition-fast);
+    user-select: none;
+}
+
+/* Dimensions adaptatives selon la taille de grille */
+.grid-6x6 .binoku-tile {
+    width: 46px;
+    height: 46px;
+    font-size: 1.15rem;
+}
+
+.grid-9x9 .binoku-tile {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+}
+
+.binoku-tile:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--text-accent);
+}
+
+.binoku-tile.selected {
+    border-color: var(--text-accent);
+    background-color: rgba(0, 243, 255, 0.15);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.3);
+}
+
+/* Séparations nettes des sous-blocs 3x3 */
+/* Pour 6x6 : bordure renforcée après la colonne 3 et la ligne 3 */
+.grid-6x6 .binoku-tile:nth-child(6n + 3) {
+    border-right: 2px solid var(--border-block);
+}
+.grid-6x6 .binoku-tile:nth-child(n+13):nth-child(-n+18),
+.grid-6x6 .binoku-tile:nth-child(n+1):nth-child(-n+6):nth-last-child(n+31) {
+    /* Ligne 3 renforcée en bas */
+}
+/* Approche universelle par classes de blocs injectées en JS pour une propreté absolue */
+.border-right-block {
+    border-right: 2px solid var(--border-block) !important;
+}
+.border-bottom-block {
+    border-bottom: 2px solid var(--border-block) !important;
+}
+
+/* Tuiles fixes (Mode 2 - Tactique) : Blanches et ancrées */
+.binoku-tile.tile-frozen {
+    background-color: var(--surface-hover);
+    color: #ffffff;
+    border-color: var(--text-accent);
+    font-weight: 700;
+    cursor: not-allowed;
+    box-shadow: inset 0 0 6px rgba(0, 243, 255, 0.2);
+}

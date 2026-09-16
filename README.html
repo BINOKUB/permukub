@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permu-kub - Manuel du Stratège (README)</title>
+    <link rel="stylesheet" href="binoku_style.css">
+    <style>
+        .readme-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+            padding: 0.5rem 0;
+        }
+        .readme-content h2 {
+            font-size: 1.15rem;
+            color: var(--text-accent);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.35rem;
+            margin-top: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .readme-content h3 {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-top: 0.5rem;
+        }
+        .readme-content p, .readme-content li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .readme-content ul {
+            padding-left: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .rule-box {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--text-accent);
+            border-radius: 4px;
+            padding: 0.85rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+        .back-link {
+            display: inline-block;
+            background-color: var(--surface-color);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: var(--transition-fast);
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        .back-link:hover {
+            background-color: var(--surface-hover);
+            border-color: var(--text-accent);
+            color: var(--text-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="binokub-container">
+        <!-- En-tête -->
+        <header class="binokub-header">
+            <h1 class="binokub-title">Permu-<span>kub</span></h1>
+            <span class="status-value" style="color: var(--text-accent);">Manuel v1.1</span>
+        </header>
+
+        <!-- Contenu du Manuel -->
+        <div class="readme-content">
+            <h2>📖 1. Présentation & Objectif</h2>
+            <p>Bienvenue dans <strong>Permu-kub</strong>, le petit frère de l'univers Binokub : un casse-tête de permutation spatiale et mathématique de haute précision. La matière y est constante : le plateau est un coffre-fort de 36 cases qu'il s'agit de réagencer.</p>
+            <ul>
+                <li><strong>La Structure :</strong> Une grille globale de 6x6 divisée en quatre sous-blocs indépendants de 3x3.</li>
+                <li><strong>L'Objectif :</strong> Permuter les tuiles à l'aide de la réserve globale pour que chaque sous-bloc devienne mathématiquement parfait.</li>
+            </ul>
+
+            <h2>📐 2. La Règle du Coffre-Fort (3x3)</h2>
+            <div class="rule-box">
+                À l'intérieur de chaque sous-bloc de 3x3, le verrouillage exige que <strong>chaque ligne, chaque colonne et la diagonale principale</strong> somment strictement et exactement à <strong>9</strong>.
+            </div>
+            <ul>
+                <li><strong>Les Lignes :</strong> Les 3 lignes internes somment à 9.</li>
+                <li><strong>Les Colonnes :</strong> Les 3 colonnes internes somment à 9.</li>
+                <li><strong>La Diagonale :</strong> La grande diagonale principale (du coin haut-gauche au coin bas-droit du bloc) somme à 9.</li>
+            </ul>
+
+            <h2>🔄 3. La Liberté de la Réserve Globale</h2>
+            <p>Pour résoudre vos blocs, vous n'êtes pas limité à des échanges locaux : <strong>l'ensemble de la grille 6x6 est une réserve ouverte</strong>. Vous pouvez piocher une tuile n'importe où sur le plateau et la permuter (swap) avec une autre pour corriger une carence de chiffres.</p>
+
+            <h2>🧠 4. Stratégie & Conseils d'Approche</h2>
+            <ul>
+                <li><strong>Observation macroscopique :</strong> Avant de bouger la moindre tuile, analysez la répartition des chiffres forts (comme les 6) et des petits chiffres sur l'ensemble du plateau.</li>
+                <li><strong>Attention à la diagonale :</strong> C'est souvent le nœud gordien du sous-bloc. Les chiffres placés aux intersections des lignes, des colonnes et de la diagonale exigent une attention chirurgicale.</li>
+                <li><strong>Patience et méthode :</strong> Chaque permutation entraîne une réaction en chaîne. Abordez le tableau comme une matrice vivante où la concentration prime sur l'impulsion.</li>
+            </ul>
+        </div>
+
+        <!-- Bouton de retour au jeu -->
+        <a href="index.html" class="back-link">← Retour au Jeu</a>
+    </main>
+
+</body>
+</html>
