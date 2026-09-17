@@ -1,5 +1,5 @@
 /* ==========================================
-   BINOKU GAMEPLAY v2.1.0
+   BINOKU GAMEPLAY v2.2.1
    ========================================== */
 
 const BinokuGameplay = {
@@ -27,7 +27,6 @@ const BinokuGameplay = {
         const gridContainer = document.getElementById('binoku-grid');
         gridContainer.innerHTML = '';
 
-        // Applique la classe CSS de grille (grid-6x6 ou grid-9x9)
         gridContainer.className = `binokub-grid grid-${this.gridSize}x${this.gridSize}`;
 
         for (let r = 0; r < this.gridSize; r++) {
@@ -36,7 +35,6 @@ const BinokuGameplay = {
                 tile.className = 'binoku-tile';
                 tile.textContent = this.currentGrid[r][c];
 
-                // Ajout des bordures visuelles pour détacher les sous-blocs 3x3
                 if ((c + 1) % 3 === 0 && c < this.gridSize - 1) {
                     tile.classList.add('border-right-block');
                 }
@@ -78,7 +76,8 @@ const BinokuGameplay = {
 
     checkSubBlock(startR, startC) {
         let sub = [];
-        let targetSum = (this.gridSize === 9) ? 15 : 9;
+        // Règle d'or absolue de Permu-kub : la somme cible est TOUJOURS 9, peu importe la taille de la grille
+        let targetSum = 9;
 
         for (let i = 0; i < 3; i++) {
             let row = [];
@@ -135,7 +134,6 @@ const BinokuGameplay = {
     }
 };
 
-// Gestion des sélections dans le menu principal
 document.addEventListener('DOMContentLoaded', () => {
     const menuScreen = document.getElementById('menu-screen');
     const gameScreen = document.getElementById('game-screen');
@@ -143,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedSize = 6;
     let selectedMode = 1;
 
-    // Boutons de taille
     document.getElementById('size-6').addEventListener('click', (e) => {
         document.getElementById('size-6').classList.add('active');
         document.getElementById('size-9').classList.remove('active');
@@ -156,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedSize = 9;
     });
 
-    // Boutons de mode
     document.getElementById('mode-1').addEventListener('click', (e) => {
         document.getElementById('mode-1').classList.add('active');
         document.getElementById('mode-2').classList.remove('active');
@@ -169,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedMode = 2;
     });
 
-    // Lancement de la partie
     document.getElementById('btn-start-game').addEventListener('click', () => {
         menuScreen.style.display = 'none';
         gameScreen.style.display = 'block';
